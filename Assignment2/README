@@ -1,0 +1,35 @@
+Makefile rules:
+
+Makefile in project folder (Assignment2_DPLKYL002):
+
+[* - use these rules here]
+
+make - compile this project folder only
+*make all - compile the entire project
+*make run args="***" - run the program
+*make clean - clean the entire project
+
+***volimage <imageBase>
+***volimage <imageBase> [-d i j output_file_name]
+***volimage <imageBase> [-x i output_file_name]
+***volimage <imageBase> [-g i output_file_name]
+
+Note: 
+- You can do only ONE of the difference map, extract or row extract operations - NOT both or all three during the same invocation of
+volimage.
+- Don't include the angle and square brackets.
+
+Run example for difference map:
+make run args="volimage brain_mri_raws/MRI -d 11 14 output/output1"
+
+Makefiles in /libs/volimagelib folders:
+make - compile this folder only
+make clean - clean this folder only
+
+Explanation of what each file does and how it fits into the program as a whole:
+
+Volimage.cpp & Volimage.h - These source and header files does the image manipulation (processing) - implementing all 
+			the operation functionality such as: difference map, extract and row extract.
+			
+Driver.cpp - This driver source file contains the main function (entry point to the program). It parses the command line 
+	 using the argc and argv values passed into main() and uses these arguments to invoke the correct operation function.
