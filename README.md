@@ -1,2 +1,2 @@
-# C-Assignment-2
+# CSC3022H_Assign2
 Raw pointers
